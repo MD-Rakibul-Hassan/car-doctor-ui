@@ -15,7 +15,7 @@ const About = () => {
             <img
               src={parts}
               alt="person"
-              className="max-w-[350px] max-h-[350px] absolute -bottom-20 -right-20 border-4  border-white rounded-xl hidden lg:block"
+              className="max-w-[350px] max-h-[350px] absolute -bottom-20 -right-20 border-4  border-white rounded-xl hidden shadow-md lg:block"
             />
           </div>
 

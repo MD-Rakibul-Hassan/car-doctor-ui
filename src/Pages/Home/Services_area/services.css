@@ -1,0 +1,21 @@
+
+
+.cart-container {
+    height: 200px;
+    overflow: hidden;
+}
+.cart-container img {
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s ease-in;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart-container:hover img {
+    scale: 1.2;
+}
+
+/* .service-img {
+
+} */
