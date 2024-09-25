@@ -1,0 +1,7 @@
+
+.product-img {
+    transition: 1s ease;
+}
+.product-img:hover .icon {
+    display: block;
+}

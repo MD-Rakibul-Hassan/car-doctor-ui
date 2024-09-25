@@ -13,7 +13,7 @@ const Services_area = () => {
           humour, <br /> or randomised words which don't look even slightly
           believable
         </p>
-          </div>
+      </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5  lg:my-10 my-5">
               {
                   data.map(service => {
