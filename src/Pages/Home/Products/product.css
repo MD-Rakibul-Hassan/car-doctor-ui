@@ -1,7 +1,10 @@
 
 .product-img {
-    transition: 1s ease;
+    /* transition: 1s ease; */
 }
 .product-img:hover .icon {
-    display: block;
+    transition: 0.5s ease;
+    opacity: 1;
+    font-size: 25px;
+    background-color: transparent;
 }

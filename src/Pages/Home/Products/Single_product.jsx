@@ -6,7 +6,7 @@ const Single_product = ({ title, img, price, rating }) => {
       <div className="card shadow-xl ">
         <figure className="px-10 relative bg-slate-300 product-img   pt-10">
           <img src={img} alt="Product" className="rounded-xl h-[200px]" />
-          <FaShoppingBag className="absolute top-5 right-5 hidden icon text-orange-500 cursor-pointer" />
+          <FaShoppingBag className="absolute top-5 right-5 opacity-0 icon text-orange-500  cursor-pointer  rounded-full" />
         </figure>
         <div className="card-body items-center text-center">
           <div>
