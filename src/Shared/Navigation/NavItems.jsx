@@ -1,18 +1,33 @@
 import { NavLink } from "react-router-dom"
-export const navItems = <>
-    <li>
-        <NavLink to='/' className={({ isActive, isPending }) => `${isActive ? 'text-xl text-orange-500 p-3 border-2 border-orange-500' : ''} p-4`}>
+import './navbar.css'
+import { useAuth } from './../../Hooks/useAuth';
+export const navItems = (
+  <>
+    
+    <li className="link-container">
+      <NavLink
+        to="/"
+        className={({ isActive, isPending }) =>
+          `${
+            isActive ? " font-bold text-[#FF3811] hover:bg-transparent   " : ""
+          }active-route text-lg`
+        }
+      >
         Home
-        </NavLink>
+      </NavLink>
     </li>
-    <li>
-        <NavLink to='/contact' className={({ isActive, isPending }) => `${isActive ? 'text-xl text-orange-500 p-3 border-2 border-orange-500' : ''} p-4`}>
-        Contact
-        </NavLink>
+
+    <li className="link-container">
+      <NavLink
+        to="/login"
+        className={({ isActive, isPending }) =>
+          `${
+            isActive ? " font-bold text-[#FF3811] hover:bg-transparent   " : ""
+          } active-route text-lg`
+        }
+      >
+        Login
+      </NavLink>
     </li>
-    <li>
-        <NavLink to='/about' className={({ isActive, isPending }) => `${isActive ? 'text-xl text-orange-500 p-3 border-2 border-orange-500' : ''} p-4`}>
-        About
-        </NavLink>
-    </li>
-</>
+  </>
+);

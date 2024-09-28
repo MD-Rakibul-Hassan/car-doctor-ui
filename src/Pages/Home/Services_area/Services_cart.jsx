@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './services.css'
 
 const Services_cart = ({ img, price, title, id }) => {
-    console.log(img,title,price,id)
+    
   return (
     <div className="card border-2 rounded-md  shadow-xl p-4">
       <div className="cart-container">

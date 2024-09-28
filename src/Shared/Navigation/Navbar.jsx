@@ -5,8 +5,37 @@ import { useTheme } from '../../Hooks/useTheme';
 import { IoIosArrowDown } from "react-icons/io";
 import { FaMoon } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
+import person from '../../assets/icons/person.svg'
+import { useAuth } from './../../Hooks/useAuth';
+import Swal from "sweetalert2";
+
+
+
+
+
+
 const Navbar = () => {
   const { theme, themeToggler, setTheme } = useTheme();
+  const { user, signOutUser, setLoading, setUser } = useAuth();
+  console.log(user)
+
+  const handleSignOutUser = () => {
+    signOutUser()
+      .then(() => {
+        setUser(null)
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User Successfully Log Out",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        setLoading(false)
+      })
+      .catch(error => {
+      console.log(error)
+    })
+  }
   
   return (
     <div>
@@ -55,7 +84,25 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-
+          <div
+            className={`${
+              user ? "flex" : "hidden"
+            } mr-5  border-2 p-3 rounded-full border-orange-500`}
+          >
+            <div className="dropdown dropdown-hover">
+              <div tabIndex={0} role="button" className="">
+                <img src={person} className="w-7 h-7" />
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-base-100 rounded-box z-[1] w-20 p-2 shadow"
+              >
+                <li className="bg-[#ff3811] text-white rounded-md">
+                  <button onClick={handleSignOutUser}>LogOut</button>
+                </li>
+              </ul>
+            </div>
+          </div>
           <a className="p-4 text-orange-500 border-2 border-orange-500 rounded-md">
             Appointment
           </a>

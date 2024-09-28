@@ -44,7 +44,7 @@ const Our_tems = () => {
           slidesPerView={3}
           centeredSlides={true}
           spaceBetween={30}
-                  navigation={true}
+                  // navigation={true}
           className="mySwiper"
         >
           {teamsInfo.map((team, index) => {
