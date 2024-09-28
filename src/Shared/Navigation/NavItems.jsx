@@ -16,6 +16,18 @@ export const navItems = (
         Home
       </NavLink>
     </li>
+    <li className="link-container">
+      <NavLink
+        to="/services"
+        className={({ isActive, isPending }) =>
+          `${
+            isActive ? " font-bold text-[#FF3811] hover:bg-transparent   " : ""
+          }active-route text-lg`
+        }
+      >
+       Services
+      </NavLink>
+    </li>
 
     <li className="link-container">
       <NavLink

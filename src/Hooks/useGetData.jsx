@@ -1,10 +1,10 @@
 import {useState,useEffect} from 'react'
 
 
-export const useGetData = (url) => {
+export const useGetData = () => {
     const [data,setData] = useState([])
     useEffect(() => {
-        fetch(url)
+        fetch('./services.json')
             .then(res => res.json())
             .then(data => setData(data))
             .catch(error => console.log(error))

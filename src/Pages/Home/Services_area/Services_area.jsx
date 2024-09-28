@@ -2,8 +2,8 @@ import { useGetData } from "./../../../Hooks/useGetData";
 import Services_cart from "./Services_cart";
 
 const Services_area = () => {
-  const [data] = useGetData("./services.json");
-    console.log(data)
+  const [data] = useGetData();
+
   return (
     <div>
       <div className="flex flex-col items-center">
@@ -18,7 +18,15 @@ const Services_area = () => {
               {
                   data.map(service => {
                       const { _id,title,price,img} = service;
-                      return <Services_cart key={_id} img={img} title={title} price={price} id={_id}/>
+                    return (
+                      <Services_cart
+                        key={_id}
+                        img={img}
+                        title={title}
+                        price={price}
+                        id={_id}
+                      />
+                    );
                   })
               }
           </div>
