@@ -3,7 +3,6 @@ import './navbar.css'
 import { useAuth } from './../../Hooks/useAuth';
 export const navItems = (
   <>
-    
     <li className="link-container">
       <NavLink
         to="/"
@@ -25,7 +24,19 @@ export const navItems = (
           }active-route text-lg`
         }
       >
-       Services
+        Services
+      </NavLink>
+    </li>
+    <li className="link-container">
+      <NavLink
+        to="/add-service"
+        className={({ isActive, isPending }) =>
+          `${
+            isActive ? " font-bold text-[#FF3811] hover:bg-transparent   " : ""
+          }active-route text-lg`
+        }
+      >
+        Add Service
       </NavLink>
     </li>
 

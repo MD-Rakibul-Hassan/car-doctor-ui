@@ -1,0 +1,15 @@
+
+
+.imageOverlay2 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,rgba(0,0,0,0.9),rgba(0,0,0,0.1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+

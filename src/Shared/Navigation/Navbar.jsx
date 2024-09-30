@@ -1,3 +1,4 @@
+import {getLocalStrogeData} from '../../Local-Stroge/localDB'
 import logo from '../../assets/logo.svg'
 import { Link } from 'react-router-dom'
 import { navItems } from './NavItems';
@@ -7,7 +8,10 @@ import { FaMoon } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
 import person from '../../assets/icons/person.svg'
 import { useAuth } from './../../Hooks/useAuth';
+import { FaShoppingCart } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useEffect, useState } from 'react';
+import { data } from 'autoprefixer';
 
 
 
@@ -15,9 +19,13 @@ import Swal from "sweetalert2";
 
 
 const Navbar = () => {
+  const [itemCount,setItemCount] = useState([])
   const { theme, themeToggler, setTheme } = useTheme();
   const { user, signOutUser, setLoading, setUser } = useAuth();
-  console.log(user)
+  useEffect(() => {
+    const data = getLocalStrogeData();
+    setItemCount(data)
+  },[])
 
   const handleSignOutUser = () => {
     signOutUser()
@@ -102,6 +110,19 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
+          </div>
+          <div className="mr-10">
+            <Link to="cart-items" className="indicator">
+              <span
+                to="/cart-items"
+                className="indicator-item badge badge-secondary bg-[#FF3811]"
+              >
+               {itemCount.length}
+              </span>
+              <button className="btn">
+                <FaShoppingCart />
+              </button>
+            </Link>
           </div>
           <a className="p-4 text-orange-500 border-2 border-orange-500 rounded-md">
             Appointment

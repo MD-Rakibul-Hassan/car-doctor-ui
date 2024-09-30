@@ -5,6 +5,8 @@ import Login from '../Pages/Login/Login';
 import SignUp from '../Pages/SignUp/SignUp';
 import Service_page from '../Pages/Services/Service_page';
 import SingleService from '../Pages/SingleService/SingleService';
+import AddService from '../Pages/AddService/AddService';
+import CartItems from '../Pages/Cart/Cart_details/CartItems';
 
 export const route = createBrowserRouter([
   {
@@ -29,8 +31,16 @@ export const route = createBrowserRouter([
       },
       {
         path: "/service/:id",
-        loader: ({params}) => fetch('./services.json'),
+        loader: ({ params }) => fetch("./services.json"),
         element: <SingleService />,
+      },
+      {
+        path: "/add-service",
+        element: <AddService />,
+      },
+      {
+        path: "/cart-items",
+        element: <CartItems />,
       },
     ],
   },
